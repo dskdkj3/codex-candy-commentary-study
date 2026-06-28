@@ -155,4 +155,4 @@ python scripts/analyze_results.py
 
 ## License
 
-License is not selected yet.
+MIT
