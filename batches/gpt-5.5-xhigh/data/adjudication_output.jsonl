@@ -1,0 +1,8 @@
+{"case_id":"case-0014","correct":true,"final_answer":"21 candies","reason":"The message explicitly concludes that the minimum is 21 candies."}
+{"case_id":"case-0062","correct":true,"final_answer":"21 candies","reason":"The final conclusion under the stated rules is 21 candies; the 29-candy note is only an alternate interpretation."}
+{"case_id":"case-0093","correct":true,"final_answer":"21 candies","reason":"The message clearly states the answer is 21 candies, with 29 only as an alternate rule interpretation."}
+{"case_id":"case-0109","correct":true,"final_answer":"21 candies","reason":"The message explicitly concludes that 9 + 12 = 21 candies are needed."}
+{"case_id":"case-0119","correct":true,"final_answer":"21 candies","reason":"The stated answer is 21 candies; the later 29-candy note is conditional on a different interpretation."}
+{"case_id":"case-0139","correct":true,"final_answer":"21 candies","reason":"The message gives 21 candies as the answer and treats 29 only as a different interpretation."}
+{"case_id":"case-0150","correct":true,"final_answer":"21 candies","reason":"The message explicitly concludes that 21 candies can guarantee the condition."}
+{"case_id":"case-0162","correct":true,"final_answer":"21 candies","reason":"The final answer is 21 candies, with 29 mentioned only for an alternate rule interpretation."}

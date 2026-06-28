@@ -1,0 +1,23 @@
+{
+  "batch": "gpt-5.5-xhigh",
+  "concurrency": 8,
+  "contains_full_final_text": false,
+  "contains_raw_artifacts": false,
+  "correct_field": "adjudicated_correct",
+  "correct_source": "adjudicated_correct",
+  "data_files": [
+    "adjudication_output.jsonl",
+    "adjudication_schema.json",
+    "non516_wrong.csv",
+    "runs.csv",
+    "runs_sanitized.jsonl",
+    "schedule.jsonl"
+  ],
+  "model": "gpt-5.5",
+  "model_reasoning_effort": "xhigh",
+  "per_arm": 100,
+  "provider_mode": "chatgpt_auth",
+  "seed": 20260628,
+  "timeout_seconds": 300,
+  "total_scheduled": 200
+}

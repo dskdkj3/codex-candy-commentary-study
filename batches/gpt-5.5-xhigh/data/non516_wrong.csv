@@ -1,0 +1,7 @@
+"run_id","arm","reasoning_output_tokens","final_integer_candidate","integer_candidates","final_text_sha256"
+"run-0013-treatment","treatment",1034,"29","29 8 4 12 7 9 16 12 16 28 1 28 1 29 29","9a497732a73c92e4141bfe44f3e20a71964d32ec0b8c32adf850c8dc4b3216c6"
+"run-0020-control","control",1034,"29","29 8 4 12 7 9 16 12 16 28 1 29 29","c148ab581ff07fe915bd011fde10d119bfb0b8061cb61e93d7df2516e8c9afa4"
+"run-0049-treatment","treatment",1034,"29","29 28 7 9 8 24 4 28 1 29","422ee6a73b3350eb12800965db284836df50b7edd2792d648c91792262a1e895"
+"run-0136-treatment","treatment",1034,"29","29 8 4 12 7 9 16 12 16 28 1 29 29","36289a1818e899be85c5da2aeffbf113db661734a1b100171f189d3c04b7f846"
+"run-0153-treatment","treatment",1034,"29","29 28 7 9 8 4 12 7 9 12 28 1 29","4507deff4396e2625d55cff7ccf92c4321f4a0297f0aa17cdd27b0218bdb3d9a"
+"run-0163-treatment","treatment",1034,"29","29 8 4 12 7 9 12 7 9 28 1 29","87accffd1e9cf3e60342c3554be6b6a2dacf2e78bd3e850dbeb151776fa2773b"
