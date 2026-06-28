@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["cases"],
+  "properties": {
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["case_id", "correct", "final_answer", "reason"],
+        "properties": {
+          "case_id": { "type": "string" },
+          "correct": { "type": "boolean" },
+          "final_answer": { "type": "string" },
+          "reason": { "type": "string" }
+        }
+      }
+    }
+  }
+}

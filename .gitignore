@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+raw/
+*.log
+*.stderr
+*.stdout
+*.tmp
+.codex/
+reports/generated-summary.md
