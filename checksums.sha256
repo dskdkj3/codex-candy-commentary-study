@@ -1,6 +1,6 @@
 5083847e2b37fd60ba77cfef5b7d2e98dd97d7918e1fefcdc0f204dbb7d86ded  ./.gitignore
 96c43440e3ded9d160e7d697aa82592abb8d2776f044530ac93cfeabdb9ca0fc  ./LICENSE
-f453b94dcdad172dbaba23d3c2b22ca9bb220a6ea7512dc8de667d03f33f4526  ./README.md
+5e3ae99eb96c4e925f07e0ed5583ef271ce4d585c2e14f99ea8a8bcc128c40bd  ./README.md
 3d4eacfdc32f31acc1c8ce47d02b50a69bc25fbcf48b62c2a9f438d250e9a5c7  ./arms/control/AGENTS.md
 8856400618621749d07364567a94c767d1e1f65e453fab1976a286752a70f4e5  ./arms/treatment/AGENTS.md
 b0381d768a474c475901ffc4b36e937079eb40c7457ed4534c6959acb2d13f3e  ./data/adjudication_output.jsonl
@@ -15,6 +15,6 @@ ff667dfcdb1f1beb8b812a3b4453eb196fcefeccfd2a77aa1d1d1d3466a3787d  ./docs/decisio
 43e05eb658b643910b2a743f20953a67e256c2eafb91fc5dc6f95fdcc7e54dc0  ./docs/glossary.md
 818228b702221b6c22832ec4b40b26b7a33fe3fae3157983665eb587ac353409  ./docs/protocol.md
 6eca5c454c9f9e4b7ce5c5c22c73a2335dc7f7a972098beed2d03c6bdf81c7dc  ./prompts/candy.txt
-0ca07a662b983c6e766c20fac2e019550e34feaa92242ca86afdefd06a56b454  ./reports/可复现实验报告.md
+c3e0ecb0faddea835d64933acc5ed30bdcbe09256f5c4881620e48b27eb990f0  ./reports/可复现实验报告.md
 e64f448b594eed71bcba2ad82cef5ff132186595dc5e8909a0397deba1d40023  ./scripts/analyze_results.py
 7dd3f1bbb3d0b44aaf249508b29797f50c19f1b596a803d6a5d294aa9762b940  ./scripts/run_experiment.py
