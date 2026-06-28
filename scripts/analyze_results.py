@@ -52,6 +52,10 @@ def median(values: Iterable[int | float | None]) -> float | None:
     return statistics.median(vals) if vals else None
 
 
+def counter_text(counter: Counter) -> str:
+    return ", ".join(f"{key}: {value}" for key, value in counter.most_common())
+
+
 def arm_counts(rows: list[dict], metric: str) -> dict[str, tuple[int, int]]:
     result = {}
     for arm in ["control", "treatment"]:
@@ -88,6 +92,8 @@ def main() -> int:
     non516_wrong = [
         row for row in rows if not row["reasoning_tokens_is_516"] and not row["adjudicated_correct"]
     ]
+    lattice_rows = [row for row in rows if (row["reasoning_output_tokens"] + 2) % 518 == 0]
+    off_lattice_rows = [row for row in rows if (row["reasoning_output_tokens"] + 2) % 518 != 0]
 
     lines = [
         "# Generated Summary",
@@ -130,6 +136,56 @@ def main() -> int:
     )
     for value, count in sorted(reasoning_counts.items()):
         lines.append(f"| {value} | {count} |")
+    lines.extend(
+        [
+            "",
+            "## Reasoning Token Lattice",
+            "",
+            f"- Exact matches for `reasoning_output_tokens = 518 * k - 2`: "
+            f"`{len(lattice_rows)}/{len(rows)}`",
+            f"- Off-lattice samples: `{len(off_lattice_rows)}`",
+            "",
+            "| reasoning_output_tokens | count | k if exact | residual vs nearest `518*k - 2` | mod 512 | correct | final integer candidates |",
+            "| ---: | ---: | ---: | ---: | ---: | ---: | --- |",
+        ]
+    )
+    for value, count in sorted(reasoning_counts.items()):
+        exact_k = (value + 2) // 518 if (value + 2) % 518 == 0 else None
+        nearest_k = round((value + 2) / 518)
+        residual = value - (518 * nearest_k - 2)
+        subset = [row for row in rows if row["reasoning_output_tokens"] == value]
+        ok = sum(1 for row in subset if row["adjudicated_correct"])
+        candidates = Counter(row.get("final_integer_candidate") for row in subset)
+        lines.append(
+            f"| {value} | {count} | {exact_k if exact_k is not None else ''} | "
+            f"{residual} | {value % 512} | {ok} | {counter_text(candidates)} |"
+        )
+    lines.extend(
+        [
+            "",
+            "| group | n | correct | final candidate 21 | final candidate 29 | median output tokens | median TTFT ms |",
+            "| --- | ---: | ---: | ---: | ---: | ---: | ---: |",
+        ]
+    )
+    groups = [
+        ("516 / k=1", lambda row: row["reasoning_output_tokens"] == 516),
+        ("1034 / k=2", lambda row: row["reasoning_output_tokens"] == 1034),
+        (
+            "non-516 exact lattice",
+            lambda row: row["reasoning_output_tokens"] != 516
+            and (row["reasoning_output_tokens"] + 2) % 518 == 0,
+        ),
+        ("off lattice", lambda row: (row["reasoning_output_tokens"] + 2) % 518 != 0),
+    ]
+    for label, predicate in groups:
+        subset = [row for row in rows if predicate(row)]
+        lines.append(
+            f"| {label} | {len(subset)} | {sum(1 for row in subset if row['adjudicated_correct'])} | "
+            f"{sum(1 for row in subset if row.get('final_integer_candidate') == '21')} | "
+            f"{sum(1 for row in subset if row.get('final_integer_candidate') == '29')} | "
+            f"{median(row['output_tokens'] for row in subset):.2f} | "
+            f"{median(row['ttft_ms'] for row in subset):.2f} |"
+        )
     lines.extend(
         [
             "",
