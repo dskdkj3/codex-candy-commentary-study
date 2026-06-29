@@ -1,0 +1,35 @@
+{
+  "batch": "gpt-5.5-xhigh-20260629-retest-1414",
+  "concurrency": 8,
+  "contains_full_final_text": false,
+  "contains_raw_artifacts": false,
+  "control_agents_sha256": "3d4eacfdc32f31acc1c8ce47d02b50a69bc25fbcf48b62c2a9f438d250e9a5c7",
+  "correct_field": "strict_correct",
+  "correct_source": "strict_correct",
+  "data_files": [
+    "runs.csv",
+    "runs_sanitized.jsonl",
+    "schedule.jsonl",
+    "first_attempt_failures.csv",
+    "first_attempt_failures.jsonl"
+  ],
+  "final_completed": 200,
+  "first_attempt_completed": 189,
+  "first_attempt_failures": 11,
+  "model": "gpt-5.5",
+  "model_reasoning_effort": "xhigh",
+  "notes": [
+    "Retest of the gpt-5.5 xhigh batch on 2026-06-29 Asia/Shanghai afternoon.",
+    "Initial API/timeout failures are recorded in first_attempt_failures.* and were retried to obtain 200 completed trials."
+  ],
+  "per_arm": 100,
+  "prompt_sha256": "6eca5c454c9f9e4b7ce5c5c22c73a2335dc7f7a972098beed2d03c6bdf81c7dc",
+  "provider_mode": "chatgpt_auth",
+  "retry_completed": 11,
+  "run_finished_at": "2026-06-29T06:45:42.941016Z",
+  "run_started_at": "2026-06-29T06:14:29.711548Z",
+  "seed": 20260628,
+  "timeout_seconds": 300,
+  "total_scheduled": 200,
+  "treatment_agents_sha256": "8856400618621749d07364567a94c767d1e1f65e453fab1976a286752a70f4e5"
+}

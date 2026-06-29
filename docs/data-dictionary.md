@@ -1,6 +1,6 @@
 # Data Dictionary
 
-第一轮公开数据集位于 `data/runs_sanitized.jsonl` 和 `data/runs.csv`。三轮公开批次位于 `batches/<batch>/data/`。这些文件不包含 raw stderr/stdout/events，也不包含完整 final assistant message。
+第一轮公开数据集位于 `data/runs_sanitized.jsonl` 和 `data/runs.csv`。四轮公开批次位于 `batches/<batch>/data/`。这些文件不包含 raw stderr/stdout/events，也不包含完整 final assistant message。
 
 | 字段 | 含义 |
 | --- | --- |
@@ -10,7 +10,7 @@
 | `status` | trial 状态；本批次全部是 `completed`。 |
 | `parser_correct` | deterministic parser 的初始正确性判定。 |
 | `adjudicated_correct` | `gpt-5.5-xhigh` 批次最终用于分析的正确性判定。 |
-| `strict_correct` | `gpt-5.4-xhigh` 和 `gpt-5.3-codex-spark-xhigh` 批次使用的严格 deterministic 正确性判定：`parser_status == resolved` 且最终数字候选为 `21`。 |
+| `strict_correct` | `gpt-5.4-xhigh`、`gpt-5.3-codex-spark-xhigh` 和 `gpt-5.5-xhigh-20260629-retest-1414` 批次使用的严格 deterministic 正确性判定：`parser_status == resolved` 且最终数字候选为 `21`。 |
 | `parser_status` | parser 状态；`ambiguous` 样本经过 blind adjudication。 |
 | `reasoning_output_tokens` | Codex `turn.completed.usage.reasoning_output_tokens`。 |
 | `reasoning_tokens_is_516` | `reasoning_output_tokens == 516`。 |
@@ -32,6 +32,7 @@
 ```text
 batches/
   gpt-5.5-xhigh/
+  gpt-5.5-xhigh-20260629-retest-1414/
   gpt-5.4-xhigh/
   gpt-5.3-codex-spark-xhigh/
 ```
@@ -45,10 +46,11 @@ batches/
 | `data/runs_sanitized.jsonl` | 脱敏 per-trial JSONL。 |
 | `data/runs.csv` | 脱敏 per-trial CSV。 |
 | `data/schedule.jsonl` | 随机化 trial schedule。 |
+| `data/first_attempt_failures.jsonl` / `data/first_attempt_failures.csv` | 仅部分重试批次包含；记录首跑失败的 run ID、状态、错误类别和耗时，不含 raw logs、完整错误文本、thread ID 或本机路径。 |
 
 ## Reasoning Token Comparison
 
-`analysis/reasoning-token-comparison/` 包含三轮合并后的 reasoning token 点表。
+`analysis/reasoning-token-comparison/` 包含四轮合并后的 reasoning token 点表。
 
 | 字段 | 含义 |
 | --- | --- |

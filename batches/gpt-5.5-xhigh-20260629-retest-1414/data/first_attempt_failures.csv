@@ -1,0 +1,12 @@
+run_id,scheduled_order,arm,first_attempt_status,first_attempt_error_kind,first_attempt_wall_ms,first_attempt_timed_out
+run-0096-control,96,control,timeout,timeout,300012,True
+run-0100-treatment,100,treatment,timeout,timeout,300006,True
+run-0123-control,123,control,timeout,timeout,300010,True
+run-0127-treatment,127,treatment,api_error,stream_disconnected,226636,False
+run-0128-control,128,control,api_error,stream_disconnected,216968,False
+run-0129-control,129,control,api_error,stream_disconnected,216366,False
+run-0130-treatment,130,treatment,api_error,stream_disconnected,216156,False
+run-0131-treatment,131,treatment,api_error,stream_disconnected,216191,False
+run-0132-control,132,control,api_error,stream_disconnected,216397,False
+run-0133-treatment,133,treatment,api_error,stream_disconnected,215700,False
+run-0136-treatment,136,treatment,timeout,timeout,300008,True

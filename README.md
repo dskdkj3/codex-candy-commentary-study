@@ -137,12 +137,13 @@ docs/glossary.md
 reports/可复现实验报告.md
 ```
 
-## 三轮公开批次数据
+## 四轮公开批次数据
 
-三轮非敏感数据位于：
+四轮非敏感数据位于：
 
 ```text
 batches/gpt-5.5-xhigh/
+batches/gpt-5.5-xhigh-20260629-retest-1414/
 batches/gpt-5.4-xhigh/
 batches/gpt-5.3-codex-spark-xhigh/
 ```
